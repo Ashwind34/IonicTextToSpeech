@@ -1,0 +1,30 @@
+<ion-grid>
+  <ion-row justify-content-center>
+    <ion-col col-md-4> 
+      <div class='form-container'>
+        <form action='' method='POST' autocomplete='off'>
+          <ion-list>
+            <ion-item>
+              <ion-label stacked>Email</ion-label>
+              <ion-input type='text' [(ngModel)]='userServ.user.email' name='email' required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label stacked>Password</ion-label>
+              <ion-input type='password' [(ngModel)]='userServ.user.password' name ='password' required></ion-input>
+            </ion-item>
+            <div class='center'>
+              <button ion-button (click)='submitUser()' [disabled] = "userServ.user.email && userServ.user.password ? false : true">Submit</button>
+            </div>
+            <div class='center'>
+              <a *ngIf="title === 'Login'" (click)='goToRegister()'>Click Here to Register</a>
+            </div>          
+            <div class='center'>
+              <p *ngIf='errorMessage'>{{ errorMessage }}</p>
+            </div>
+          </ion-list>
+        </form>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

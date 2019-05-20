@@ -28,9 +28,14 @@
           <ion-input [(ngModel)]='text'></ion-input>          
         </ion-item>
         <ion-item>
-          <button ion-button (click)='speakText()'>Play Text</button>
+          <button ion-button (click)='freshStory()'>Story</button>
+        <ion-item>
+          <button ion-button (click)='userStory()'>Story With Prompt</button>
+        </ion-item>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
+
+  <p>{{ story.gptResponse }}</p>
 </ion-content>

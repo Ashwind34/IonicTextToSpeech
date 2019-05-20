@@ -28,7 +28,7 @@ export class UserserviceProvider {
   emptyLogin() {
     this.isLoggedIn = false
     this.user = {
-      username: '',
+      email: '',
       password: ''
     }  
   }

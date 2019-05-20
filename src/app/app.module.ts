@@ -14,6 +14,7 @@ import { HeaderComponent } from '../components/header/header';
 import { UserformComponent } from '../components/userform/userform';
 import { UserserviceProvider } from '../providers/userservice/userservice';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { StoryProvider } from '../providers/story/story';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserserviceProvider,
-    TextToSpeech
+    TextToSpeech,
+    StoryProvider
   ]
 })
 export class AppModule {}

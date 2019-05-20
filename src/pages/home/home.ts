@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { StoryProvider } from '../../providers/story/story';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [StoryProvider]
 })
 export class HomePage {
 
-  constructor (private tts: TextToSpeech) {}
+  constructor (private tts: TextToSpeech, private story: StoryProvider) {}
 
   text: string;
 
@@ -23,6 +25,14 @@ export class HomePage {
     })
       .then(() => console.log('success'))
       .catch((reason:any) => console.log(reason))
+  }
+
+  freshStory(){
+    this.story.randomStory()
+  }
+
+  inputStory() {
+    this.story.userStory()
   }
 
 }

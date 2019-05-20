@@ -14,7 +14,21 @@
           <ion-input [(ngModel)]='text'></ion-input>          
         </ion-item>
         <ion-item>
-          <button ion-buttion (click)='speakText()'>Play Text</button>
+          <button ion-button (click)='speakText()'>Play Text</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]='text'></ion-input>          
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)='speakText()'>Play Text</button>
         </ion-item>
       </ion-list>
     </ion-card-content>

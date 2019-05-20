@@ -28,15 +28,15 @@ export class StoryProvider {
 
   randomStory() {
     console.log(this.fakeResponse);
-    // return this.http.get(this.getUrl)
-    // .subscribe(
-    //   (response: any) => {
-    //     this.gptResponse = response;
-    //     console.log(this.gptResponse);
-    //   }, error => {
-    //     console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
-    //   }
-    // );
+    return this.http.get(this.getUrl)
+    .subscribe(
+      (response: any) => {
+        this.gptResponse = response;
+        console.log(this.gptResponse);
+      }, error => {
+        console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
+      }
+    );
   }
 
   userStory(){

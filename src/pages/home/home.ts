@@ -4,7 +4,6 @@ import { StoryProvider } from '../../providers/story/story';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [StoryProvider]
 })
 export class HomePage {
 

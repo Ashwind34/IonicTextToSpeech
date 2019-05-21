@@ -25,7 +25,7 @@
           <ion-input [(ngModel)]='story.text'></ion-input>          
         </ion-item>
         <ion-item>
-          <button ion-button (click)='story.speakText()'>Play Text</button>
+          <button ion-button (click)='story.speakText(story.text)'>Play Text</button>
           <button ion-button (click)='story.stopText()'>Stop Speaking</button>
         </ion-item>
       </ion-list>

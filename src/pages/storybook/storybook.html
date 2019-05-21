@@ -8,7 +8,8 @@
       Here is your story...
     </ion-card-header>
     <ion-card-content>
-        <p>{{ story.gptResponse }}</p>
+      <p>{{ story.gptResponse }}</p>
+      <button ion-button (click)='story.speakText(story.gptResponse)'>Restart Story</button>
     </ion-card-content>
   </ion-card>
   <ion-card *ngIf='!story.gptResponse'>

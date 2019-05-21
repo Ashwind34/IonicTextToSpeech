@@ -38,9 +38,9 @@ export class StoryProvider {
     console.log('Story Provider Loaded')
   }
 
-  speakText() {
+  speakText(text) {
     this.tts.speak({
-      text: this.text,
+      text: text,
       rate: this.rate,
       locale: this.locale.code
     })
@@ -61,11 +61,7 @@ export class StoryProvider {
       (response: any) => {
         this.gptResponse = response.text;
         console.log(this.gptResponse);
-        this.tts.speak({
-          text: this.gptResponse,
-          rate: this.rate,
-          locale: this.locale.code
-        })
+        this.speakText(this.gptResponse)      
       }, error => {
         console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
       }

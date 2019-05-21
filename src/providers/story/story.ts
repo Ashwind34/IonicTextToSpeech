@@ -21,6 +21,8 @@ export class StoryProvider {
 
   locale: string = 'en-US'
 
+  isSpeaking: boolean = false;
+
   //USE THESE PROPERTIES AFTER RE-CONFIGURING API ENDPOINTS
 
   // postUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app';
@@ -41,8 +43,14 @@ export class StoryProvider {
       rate: this.rate,
       locale: this.locale
     })
-      .then(() => console.log('success'))
+      .then(() => this.isSpeaking = true)
       .catch((reason:any) => console.log(reason))
+  }
+
+  stopText() {
+    this.tts.speak({
+      text: ''
+    })
   }
 
   randomStory() {

@@ -3,6 +3,11 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card *ngIf='story.isSpeaking'>
+    <ion-card-content>
+      CURRENTLY SPEAKING
+    </ion-card-content>
+  </ion-card>
   <ion-card>
     <ion-card-content>
       <ion-item>
@@ -22,6 +27,7 @@
         </ion-item>
         <ion-item>
           <button ion-button (click)='story.speakText()'>Play Text</button>
+          <button ion-button (click)='story.stopText()'>Stop Speaking</button>
         </ion-item>
       </ion-list>
     </ion-card-content>

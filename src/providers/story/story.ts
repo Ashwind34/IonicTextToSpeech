@@ -62,6 +62,7 @@ export class StoryProvider {
     console.log(this.length);
     console.log(this.rate);
     console.log(this.text);
+    console.log(this.locale);
   }
 
   //CURRENT API WILL ACCEPT TEXT TO FEED INTO MODEL

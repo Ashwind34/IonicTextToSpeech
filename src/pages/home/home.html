@@ -10,7 +10,11 @@
         <ion-range min='-2' max='2' step='0.5' snaps='true' [(ngModel)]='story.rate'>
           <ion-label range-left>-2x</ion-label>
           <ion-label range-right>2x</ion-label>
-        </ion-range>  
+        </ion-range>
+        <ion-item>
+          <ion-label>Input Word Length (Max 500 words)</ion-label>
+          <ion-input [(ngModel)]='story.length'></ion-input>
+        </ion-item>  
       </ion-card-content>
   </ion-card>
   <ion-card>
@@ -32,17 +36,15 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Input Word Length (Max 500 words)</ion-label>
-          <ion-input [(ngModel)]='story.length'></ion-input>
-        </ion-item>
-        <ion-item>
           <button ion-button (click)='freshStory()'>Story</button>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- THIS CARD MAY NOT BE VIABLE - API DOESN'T SEEM TO HAVE FUNCTIONALITY TO ACCEPT TEXT -->
+
+  <!-- <ion-card>
     <ion-card-header>Tell me a story about...</ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -59,7 +61,7 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <button ion-button (click)='check()'>Console Logs</button>
+  <button ion-button (click)='check()'>Console Logs</button> -->
 
   <p>{{ story.gptResponse }}</p>
 </ion-content>

@@ -49,14 +49,14 @@ export class StoryProvider {
     .subscribe(
       (response: any) => {
         this.gptResponse = response.text;
-        console.log(this.length)
-        console.log(this.getUrl)
         console.log(this.gptResponse);
       }, error => {
         console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
       }
     );
   }
+
+  //NOT SURE IF API WILL ACCEPT TEXT TO FEED INTO MODEL!! MAY NOT BE ABLE TO USE THIS METHOD!
 
   userStory(){
     console.log(this.fakeResponse);

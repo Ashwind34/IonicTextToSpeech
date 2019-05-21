@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngIf="story.gptResponse">
     <ion-card-header>
       Here is your story...
     </ion-card-header>
@@ -11,6 +11,9 @@
         <p>{{ story.gptResponse }}</p>
     </ion-card-content>
   </ion-card>
-  <button ion-button (click)='goToHome()'>Return to Home Page</button>
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar class='center'>
+      <button ion-button (click)='goToHome()'>Return to Home Page</button>
+  </ion-toolbar>
+</ion-footer>

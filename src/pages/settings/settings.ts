@@ -21,12 +21,6 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
-  check() {
-    console.log(this.story.length);
-    console.log(this.story.rate);
-    console.log(this.story.text);
-  }
-
   goToHome() {
     this.navCtrl.setRoot(HomePage)
   }  

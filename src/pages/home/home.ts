@@ -9,18 +9,4 @@ export class HomePage {
 
   constructor (public story: StoryProvider) {}
 
-  freshStory(){
-    this.story.randomStory()
-  }
-
-  inputStory() {
-    this.story.userStory()
-  }
-
-  check() {
-    console.log(this.story.length);
-    console.log(this.story.rate);
-    console.log(this.story.text);
-  }
-
 }

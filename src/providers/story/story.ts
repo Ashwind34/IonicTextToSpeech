@@ -7,7 +7,7 @@ export class StoryProvider {
 
   length: number = 500;
 
-  getUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app?length=' + this.length + '&temperature=0.8&top_k=40'
+  getUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app?temperature=0.8&top_k=40'
 
   postUrl: string = '';
 
@@ -45,7 +45,7 @@ export class StoryProvider {
 
   randomStory() {
     console.log(this.fakeResponse);
-    return this.http.get(this.getUrl)
+    return this.http.get(this.getUrl + '&length=' + this.length)
     .subscribe(
       (response: any) => {
         this.gptResponse = response.text;

@@ -35,4 +35,10 @@ export class HomePage {
     this.story.userStory()
   }
 
+  check() {
+    console.log(this.story.length);
+    console.log(this.rate)
+    console.log(this.text)
+  }
+
 }

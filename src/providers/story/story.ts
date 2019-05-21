@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 @Injectable()
 export class StoryProvider {
@@ -22,8 +23,24 @@ export class StoryProvider {
     "top_k": "40"
   }
 
-  constructor(public http: HttpClient) {
+  text: string;
+
+  rate: number = 0;
+
+  locale: string = 'en-US'
+
+  constructor(public http: HttpClient, public tts: TextToSpeech) {
     console.log('Story Provider Loaded')
+  }
+
+  speakText() {
+    this.tts.speak({
+      text: this.text,
+      rate: this.rate,
+      locale: this.locale
+    })
+      .then(() => console.log('success'))
+      .catch((reason:any) => console.log(reason))
   }
 
   randomStory() {
@@ -31,7 +48,9 @@ export class StoryProvider {
     return this.http.get(this.getUrl)
     .subscribe(
       (response: any) => {
-        this.gptResponse = response;
+        this.gptResponse = response.text;
+        console.log(this.length)
+        console.log(this.getUrl)
         console.log(this.gptResponse);
       }, error => {
         console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')

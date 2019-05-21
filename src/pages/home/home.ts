@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { StoryProvider } from '../../providers/story/story';
 
 @Component({
@@ -9,23 +8,7 @@ import { StoryProvider } from '../../providers/story/story';
 })
 export class HomePage {
 
-  constructor (private tts: TextToSpeech, private story: StoryProvider) {}
-
-  text: string;
-
-  rate: number = 0;
-
-  locale: string = 'en-US'
-
-  speakText() {
-    this.tts.speak({
-      text: this.text,
-      rate: this.rate,
-      locale: this.locale
-    })
-      .then(() => console.log('success'))
-      .catch((reason:any) => console.log(reason))
-  }
+  constructor (private story: StoryProvider) {}
 
   freshStory(){
     this.story.randomStory()
@@ -37,8 +20,8 @@ export class HomePage {
 
   check() {
     console.log(this.story.length);
-    console.log(this.rate)
-    console.log(this.text)
+    console.log(this.story.rate);
+    console.log(this.story.text);
   }
 
 }

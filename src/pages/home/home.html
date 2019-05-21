@@ -3,11 +3,18 @@
 </ion-header>
 
 <ion-content padding>
-  <br>
-  <h3>This is where the TEXT-TO-SPEECH will go</h3>
-
   <ion-card>
-    <ion-card-header></ion-card-header>
+    <ion-card-header>Speech Rate</ion-card-header>
+      <ion-card-content>
+        <ion-label>Text Speed = {{ rate }}x </ion-label>
+        <ion-range min='-2' max='2' step='0.5' snaps='true' [(ngModel)]='rate'>
+          <ion-label range-left>-2x</ion-label>
+          <ion-label range-right>2x</ion-label>
+        </ion-range>  
+      </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>Text-to-Speech</ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
@@ -21,17 +28,25 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-header></ion-card-header>
+    <ion-card-header>Tell me a story!</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <button ion-button (click)='freshStory()'>Story</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Tell me a story about...</ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
           <ion-input [(ngModel)]='text'></ion-input>          
         </ion-item>
         <ion-item>
-          <button ion-button (click)='freshStory()'>Story</button>
-        <ion-item>
           <button ion-button (click)='inputStory()'>Story With Prompt</button>
-        </ion-item>
         </ion-item>
       </ion-list>
     </ion-card-content>

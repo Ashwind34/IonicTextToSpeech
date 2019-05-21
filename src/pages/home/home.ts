@@ -13,7 +13,7 @@ export class HomePage {
 
   text: string;
 
-  rate: number;
+  rate: number = 0;
 
   locale: string = 'en-US'
 

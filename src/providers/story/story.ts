@@ -40,13 +40,19 @@ export class StoryProvider {
 
   cleanInputs() {
     if(this.length > 500) {
-      this.length = 500
+      this.length = 500;
+    }
+    if(this.length < 0) {
+      this.length = 0;
     }
     if(this.length % 2 !==0 ) {
-      this.length = Math.floor(this.length)
+      this.length = Math.floor(this.length);
     }
     if(this.rate > 2) {
-      this.rate = 2
+      this.rate = 2;
+    }
+    if(this.rate < 0) {
+      this.rate = 0;
     }
   }
 

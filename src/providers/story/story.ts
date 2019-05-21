@@ -61,6 +61,11 @@ export class StoryProvider {
       (response: any) => {
         this.gptResponse = response.text;
         console.log(this.gptResponse);
+        this.tts.speak({
+          text: this.gptResponse,
+          rate: this.rate,
+          locale: this.locale.code
+        })
       }, error => {
         console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
       }

@@ -6,16 +6,11 @@
     <ion-card>
       <ion-card-header>Speech Rate</ion-card-header>
         <ion-card-content>
-          <ion-label>Text Speed = {{ story.rate }}x </ion-label>
-          <ion-range min='0' max='2' snaps='true' [(ngModel)]='story.rate'>
-            <ion-label range-left>Slower</ion-label>
-            <ion-label range-right>Faster</ion-label>
-          </ion-range>
-          <ion-item>
+          <ion-label>Playback Speed</ion-label>
+          <ion-input type='number' placeholder='Speed Range is 0-2, default 1.5' [(ngModel)]='story.rate'></ion-input>
             <!-- <ion-label>Input Word Length (Max 500 words)</ion-label> -->
-            <ion-label>Length</ion-label>
-            <ion-input [(ngModel)]='story.length'></ion-input>
-          </ion-item>  
+          <ion-label>Story Length (in words)</ion-label>
+          <ion-input placeholder='Max value = 500' [(ngModel)]='story.length'></ion-input>
         </ion-card-content>
     </ion-card>
     <button ion-button (click)='presentLanguage()'>Select Language</button><br>

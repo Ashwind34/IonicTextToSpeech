@@ -5,7 +5,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 @Injectable()
 export class StoryProvider {
 
-  length: number = 500;
+  length: number;
 
   getUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app?temperature=0.8&top_k=40'
 
@@ -17,7 +17,7 @@ export class StoryProvider {
 
   text: string;
 
-  rate: number = 1;
+  rate: number;
 
   locale: any = {
     title: 'English',
@@ -38,7 +38,20 @@ export class StoryProvider {
     console.log('Story Provider Loaded')
   }
 
+  cleanInputs() {
+    if(this.length > 500) {
+      this.length = 500
+    }
+    if(this.length % 2 !==0 ) {
+      this.length = Math.floor(this.length)
+    }
+    if(this.rate > 2) {
+      this.rate = 2
+    }
+  }
+
   speakText(text) {
+    this.cleanInputs();
     this.tts.speak({
       text: text,
       rate: this.rate,
@@ -55,6 +68,7 @@ export class StoryProvider {
   }
 
   randomStory() {
+    this.cleanInputs();
     console.log(this.fakeResponse);
     return this.http.get(this.getUrl + '&length=' + this.length)
     .subscribe(

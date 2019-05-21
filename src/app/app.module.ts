@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { SettingsPage } from '../pages/settings/settings';
 import { HeaderComponent } from '../components/header/header';
 import { UserformComponent } from '../components/userform/userform';
 import { UserserviceProvider } from '../providers/userservice/userservice';
@@ -22,6 +23,7 @@ import { StoryProvider } from '../providers/story/story';
     HomePage,
     LoginPage,
     RegisterPage,
+    SettingsPage,
     HeaderComponent,
     UserformComponent
   ],
@@ -36,6 +38,7 @@ import { StoryProvider } from '../providers/story/story';
     HomePage,
     LoginPage,
     RegisterPage,
+    SettingsPage,
     HeaderComponent,
     UserformComponent
   ],

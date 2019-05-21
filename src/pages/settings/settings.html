@@ -1,0 +1,22 @@
+<ion-header>
+    <header [title]='title'></header>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card>
+      <ion-card-header>Speech Rate</ion-card-header>
+        <ion-card-content>
+          <ion-label>Text Speed = {{ story.rate }}x </ion-label>
+          <ion-range min='-2' max='2' step='0.5' snaps='true' [(ngModel)]='story.rate'>
+            <ion-label range-left>-2x</ion-label>
+            <ion-label range-right>2x</ion-label>
+          </ion-range>
+          <ion-item>
+            <ion-label>Input Word Length (Max 500 words)</ion-label>
+            <ion-input [(ngModel)]='story.length'></ion-input>
+          </ion-item>  
+        </ion-card-content>
+    </ion-card>
+    <button ion-button (click)='check()'>Console Logs</button><br>
+    <button ion-button (click)='goToHome()'>Submit</button>
+  </ion-content>

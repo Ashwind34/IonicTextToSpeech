@@ -8,7 +8,7 @@ import { StoryProvider } from '../../providers/story/story';
 })
 export class HomePage {
 
-  constructor (private story: StoryProvider) {}
+  constructor (public story: StoryProvider) {}
 
   freshStory(){
     this.story.randomStory()

@@ -15,8 +15,12 @@ export class HomePage {
     public navParams: NavParams,
     public story: StoryProvider) {}
 
+    goToStory() {
+      this.navCtrl.setRoot(StorybookPage)
+    }
+
     newStory(){
       this.story.randomStory();
-      this.navCtrl.setRoot(StorybookPage)
+      this.goToStory();
     }
 }

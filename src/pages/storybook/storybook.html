@@ -11,9 +11,18 @@
         <p>{{ story.gptResponse }}</p>
     </ion-card-content>
   </ion-card>
+  <ion-card *ngIf='!story.gptResponse'>
+    <ion-card-header>
+      Click below for a new story!
+    </ion-card-header>
+    <ion-card-content class='center'>
+      <button ion-button (click)='story.randomStory()'>Generate a New Story!</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 <ion-footer>
   <ion-toolbar class='center'>
-      <button ion-button (click)='goToHome()'>Return to Home Page</button>
+    <button ion-button (click)='story.stopText()'>Stop Speaking</button>
+    <button ion-button (click)='goToHome()'>Return to Home Page</button>      
   </ion-toolbar>
 </ion-footer>

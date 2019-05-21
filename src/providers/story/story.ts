@@ -6,9 +6,9 @@ export class StoryProvider {
 
   length: number = 500;
 
-  getUrl: string = 'https://gpt2-cy5b7ah32q-uc.a.run.app?length=' + this.length + '&temperature=0.8&top_k=40'
+  getUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app?length=' + this.length + '&temperature=0.8&top_k=40'
 
-  postUrl: string = 'https://gpt2-cy5b7ah32q-uc.a.run.app';
+  postUrl: string = '';
 
   seed: number;
 
@@ -41,14 +41,14 @@ export class StoryProvider {
 
   userStory(){
     console.log(this.fakeResponse);
-    // return this.http.post(this.postUrl, this.params)
-    // .subscribe(
-    //   (response: any) => {
-    //     this.gptResponse = response;
-    //   }, error => {
-    //     console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
-    //   }
-    // );
+    return this.http.post(this.postUrl, this.params)
+    .subscribe(
+      (response: any) => {
+        this.gptResponse = response;
+      }, error => {
+        console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
+      }
+    );
   }
 
   

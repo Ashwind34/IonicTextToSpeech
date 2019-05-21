@@ -37,12 +37,10 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <button ion-button (click)='story.randomStory()'>Story</button>
+          <button ion-button (click)='newStory()'>Story</button>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
-
   <button ion-button (click)='story.check()'>Console Logs</button>
-  <p>{{ story.gptResponse }}</p>
 </ion-content>

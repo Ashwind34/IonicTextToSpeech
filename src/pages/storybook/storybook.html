@@ -1,0 +1,16 @@
+<ion-header>
+  <header [title]='title'></header>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Here is your story...
+    </ion-card-header>
+    <ion-card-content>
+        <p>{{ story.gptResponse }}</p>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button (click)='goToHome()'>Return to Home Page</button>
+
+</ion-content>

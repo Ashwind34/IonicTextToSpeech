@@ -16,6 +16,8 @@ import { UserformComponent } from '../components/userform/userform';
 import { UserserviceProvider } from '../providers/userservice/userservice';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { StoryProvider } from '../providers/story/story';
+import { StorybookPage } from '../pages/storybook/storybook';
+import { StorybookPageModule } from '../pages/storybook/storybook.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { StoryProvider } from '../providers/story/story';
     LoginPage,
     RegisterPage,
     SettingsPage,
+    StorybookPage,
     HeaderComponent,
     UserformComponent
   ],
@@ -39,6 +42,7 @@ import { StoryProvider } from '../providers/story/story';
     LoginPage,
     RegisterPage,
     SettingsPage,
+    StorybookPage,
     HeaderComponent,
     UserformComponent
   ],

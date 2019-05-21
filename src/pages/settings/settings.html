@@ -7,9 +7,9 @@
       <ion-card-header>Speech Rate</ion-card-header>
         <ion-card-content>
           <ion-label>Text Speed = {{ story.rate }}x </ion-label>
-          <ion-range min='-2' max='2' step='0.5' snaps='true' [(ngModel)]='story.rate'>
-            <ion-label range-left>-2x</ion-label>
-            <ion-label range-right>2x</ion-label>
+          <ion-range min='0' max='2' snaps='true' [(ngModel)]='story.rate'>
+            <ion-label range-left>Slower</ion-label>
+            <ion-label range-right>Faster</ion-label>
           </ion-range>
           <ion-item>
             <ion-label>Input Word Length (Max 500 words)</ion-label>

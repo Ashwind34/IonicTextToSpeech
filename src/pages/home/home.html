@@ -3,12 +3,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngIf='story.isSpeaking'>
-    <ion-card-content>
-      CURRENTLY SPEAKING
-    </ion-card-content>
-  </ion-card>
   <ion-card>
+    <ion-card-header>Current Settings</ion-card-header>
     <ion-card-content>
       <ion-item>
         Text Speed = {{ story.rate }}x 
@@ -16,6 +12,9 @@
       <ion-item>
         Story Length = {{ story.length }} words
       </ion-item>  
+      <ion-item>
+        Language = {{ story.locale.title }}
+      </ion-item> 
     </ion-card-content>
   </ion-card>
   <ion-card>

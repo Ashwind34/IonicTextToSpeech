@@ -34,37 +34,58 @@ export class SettingsPage {
         {
           text: 'English',
           handler: () => {
-            this.story.locale = 'en-US'
+            this.story.locale = {
+              title: 'English',
+              code: 'en-US'
+            }
           }
         } , {
           text: 'Spanish',
           handler: () => {
-            this.story.locale = 'es'
+            this.story.locale = {
+              title: 'Spanish',
+              code: 'es'
+            }
           }
         }, {
           text: 'Italian',
           handler: () => {
-            this.story.locale = 'it'
+            this.story.locale = {
+              title: 'Italian',
+              code: 'it'
+            }
           }
         }, {
           text: 'French',
           handler: () => {
-            this.story.locale = 'fr_FR'
+            this.story.locale = {
+              title: 'French',
+              code: 'fr_FR'
+            }
           }
         }, {
           text: 'Chinese',
           handler: () => {
-            this.story.locale = 'zh'
+            this.story.locale = {
+              title: 'Chinese',
+              code: 'zh'
+            }
           }
         }, {
           text: 'Japanese',
           handler: () => {
-            this.story.locale = 'ja_JP'
+            this.story.locale = {
+              title: 'Japanese',
+              code: 'ja_JP'
+            }
           }
         }, {
           text: 'Russian',
           handler: () => {
-            this.story.locale = 'ru-RU'
+            this.story.locale = {
+              title: 'Russian',
+              code: 'ru-RU'
+            }
           }
         }, {
           text: 'Cancel',

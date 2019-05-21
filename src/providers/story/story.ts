@@ -17,11 +17,12 @@ export class StoryProvider {
 
   text: string;
 
-  rate: number = 0;
+  rate: number = 1;
 
-  locale: string = 'en-US'
-
-  isSpeaking: boolean = false;
+  locale: any = {
+    title: 'English',
+    code: 'en-US'
+  }
 
   //USE THESE PROPERTIES AFTER RE-CONFIGURING API ENDPOINTS
 
@@ -41,9 +42,9 @@ export class StoryProvider {
     this.tts.speak({
       text: this.text,
       rate: this.rate,
-      locale: this.locale
+      locale: this.locale.code
     })
-      .then(() => this.isSpeaking = true)
+      .then(() => console.log('Success'))
       .catch((reason:any) => console.log(reason))
   }
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { LoadingController } from 'ionic-angular';
 
 @Injectable()
 export class StoryProvider {
@@ -24,6 +25,8 @@ export class StoryProvider {
     code: 'en-US'
   }
 
+  errorMessage: string;
+
   //USE THESE PROPERTIES AFTER RE-CONFIGURING API ENDPOINTS
 
   // postUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app';
@@ -34,7 +37,7 @@ export class StoryProvider {
   //   "top_k": "40"
   // }
 
-  constructor(public http: HttpClient, public tts: TextToSpeech) {
+  constructor(public http: HttpClient, public tts: TextToSpeech, public loader: LoadingController) {
     console.log('Story Provider Loaded')
   }
 
@@ -45,7 +48,7 @@ export class StoryProvider {
     if(this.length < 0) {
       this.length = 0;
     }
-    if(this.length % 2 !==0 ) {
+    if(this.length % 2 !== 0 ) {
       this.length = Math.floor(this.length);
     }
     if(this.rate > 2) {
@@ -74,16 +77,23 @@ export class StoryProvider {
   }
 
   randomStory() {
-    this.cleanInputs();
+    this.cleanInputs();    
     console.log(this.fakeResponse);
+    let loader = this.loader.create({
+      content: 'Creating your story...'
+    })
+    loader.present()
     return this.http.get(this.getUrl + '&length=' + this.length)
     .subscribe(
       (response: any) => {
         this.gptResponse = response.text;
         console.log(this.gptResponse);
-        this.speakText(this.gptResponse)      
+        this.speakText(this.gptResponse)
+        loader.dismiss()      
       }, error => {
-        console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
+        this.errorMessage = 'Error Status Code: ' + error.status + ' (' + error.statusText + ')'
+        console.log(this.errorMessage)
+        loader.dismiss()
       }
     );
   }

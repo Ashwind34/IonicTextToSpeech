@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-card>
+  <ion-card>
     <ion-card-header>Current Settings</ion-card-header>
     <ion-card-content>
       <ion-item>
@@ -16,43 +16,71 @@
         Language = {{ story.locale.title }}
       </ion-item> 
     </ion-card-content>
-  </ion-card> -->
-  <ion-card>
-    <ion-card-header>Speech Rate</ion-card-header>
-      <ion-card-content>
-        <ion-label>Playback Speed</ion-label>
-        <ion-input type='number' placeholder='Speed Range is 0-2, default 1.5' [(ngModel)]='story.rate'></ion-input>
-          <!-- <ion-label>Input Word Length (Max 500 words)</ion-label> -->
-        <ion-label>Story Length (in words)</ion-label>
-        <ion-input placeholder='Max value = 500' [(ngModel)]='story.length'></ion-input>
-        <button ion-button>Select Language</button><br>
-      </ion-card-content>
   </ion-card>
+  
+  <!-- <ion-card>
+    <ion-card-header class='card-title center-text'>Settings</ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Select Playback Speed (0-2)</ion-label>
+            <ion-input type='number'[(ngModel)]='story.rate'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Select Story Length (Max 500 words)</ion-label>
+            <ion-input  [(ngModel)]='story.length'></ion-input>
+          </ion-item>
+          <ion-item>               
+            Current Language = {{ story.locale.title }}         
+          </ion-item>
+          <ion-item>
+            <button ion-button block>Select Language</button> 
+          </ion-item>
+        </ion-list> 
+      </ion-card-content>
+  </ion-card> -->
+
   <ion-card>
-    <ion-card-header>Text-to-Speech</ion-card-header>
+    <ion-card-header class='card-title center-text'>Text-to-Speech</ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
+          <ion-label floating>Input Text for Playback</ion-label>
           <ion-input [(ngModel)]='story.text'></ion-input>          
         </ion-item>
         <ion-item>
-          <button ion-button (click)='story.speakText(story.text)'>Play Text</button>
-          <button ion-button (click)='story.stopText()'>Stop Speaking</button>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <button ion-button block (click)='story.speakText(story.text)'>Play Text</button>
+              </ion-col>
+              <ion-col col-6>
+                <button ion-button block (click)='story.stopText()'>Stop Speaking</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
-    <ion-card-header>Tell me a story!</ion-card-header>
+    <ion-card-header class='card-title center-text'>Tell me a story!</ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <button ion-button (click)='newStory()'>Story</button>
-          <button ion-button (click)='goToStory()'>See Last Story</button>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <button ion-button block (click)='newStory()'>New Story</button>
+              </ion-col>
+              <ion-col col-6>
+                  <button ion-button block (click)='goToStory()'>See Last Story</button>
+              </ion-col>    
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <button ion-button (click)='story.check()'>Console Logs</button>
 </ion-content>

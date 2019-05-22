@@ -1,3 +1,20 @@
 page-settings {
 
+    .item-label-floating {
+        font-size: 90%;
+        color: grey;
+    }
+    
+    .card-header-ios, .card-header-md {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #333;
+        padding: 16px;
+        margin: 0;
+    }
+    
+    .center-text {
+        text-align: center;
+    }
+
 }

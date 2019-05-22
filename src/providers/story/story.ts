@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { LoadingController } from 'ionic-angular';
+import { empty } from 'rxjs/Observer';
 
 @Injectable()
 export class StoryProvider {
@@ -45,7 +46,7 @@ export class StoryProvider {
     if(this.length > 500) {
       this.length = 500;
     }
-    if (this.length < 10) {
+    if (this.length < 10 || !this.length) {
       this.length = 10;
     }
     if(this.length % 2 !== 0 ) {
@@ -56,6 +57,9 @@ export class StoryProvider {
     }
     if(this.rate < 0) {
       this.rate = 0;
+    }
+    if(!this.rate) {
+      this.rate = 1.5;
     }
   }
 

@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-header>Current Settings</ion-card-header>
     <ion-card-content>
       <ion-item>
@@ -16,6 +16,17 @@
         Language = {{ story.locale.title }}
       </ion-item> 
     </ion-card-content>
+  </ion-card> -->
+  <ion-card>
+    <ion-card-header>Speech Rate</ion-card-header>
+      <ion-card-content>
+        <ion-label>Playback Speed</ion-label>
+        <ion-input type='number' placeholder='Speed Range is 0-2, default 1.5' [(ngModel)]='story.rate'></ion-input>
+          <!-- <ion-label>Input Word Length (Max 500 words)</ion-label> -->
+        <ion-label>Story Length (in words)</ion-label>
+        <ion-input placeholder='Max value = 500' [(ngModel)]='story.length'></ion-input>
+        <button ion-button>Select Language</button><br>
+      </ion-card-content>
   </ion-card>
   <ion-card>
     <ion-card-header>Text-to-Speech</ion-card-header>

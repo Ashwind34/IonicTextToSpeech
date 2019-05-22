@@ -45,8 +45,8 @@ export class StoryProvider {
     if(this.length > 500) {
       this.length = 500;
     }
-    if(this.length < 0) {
-      this.length = 0;
+    if (this.length < 10) {
+      this.length = 10;
     }
     if(this.length % 2 !== 0 ) {
       this.length = Math.floor(this.length);

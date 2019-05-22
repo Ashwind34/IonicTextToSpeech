@@ -4,7 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserserviceProvider {
 
+  //use this for local testing
+
   userUrl: string = 'http://localhost:3000/api/appUsers'
+
+  //use this for DevApp testing
+
+  // userUrl: string = 'http://<IP ADDRESS>:3000/api/appUsers'
 
   isLoggedIn: boolean = false;
 

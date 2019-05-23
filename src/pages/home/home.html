@@ -7,44 +7,20 @@
   <ion-card>
     <ion-card-header class='center-text'>Current Settings</ion-card-header>
     <ion-card-content>
-      <div class='smallfont'>
-        <ion-item>
-          Text Speed = {{ story.rate }}x 
-        </ion-item>
-        <ion-item>
-          Story Length = {{ story.length }} words
-        </ion-item>  
-        <ion-item>
-          Language = {{ story.locale.title }}
-        </ion-item>
-        <ion-item class='center-text'>
-          <button ion-button (click)='goToSettings()'>Change Settings</button>
-        </ion-item> 
-      </div>
+      <ion-item>
+        Text Speed = {{ story.rate }} 
+      </ion-item>
+      <ion-item>
+        Story Length = {{ story.length }}
+      </ion-item>  
+      <ion-item>
+        Language = {{ story.locale.title }}
+      </ion-item>
+      <ion-item class='center-text'>
+        <button ion-button (click)='goToSettings()'>Change Settings</button>
+      </ion-item> 
     </ion-card-content>
   </ion-card>
-  
-  <!-- <ion-card>
-    <ion-card-header class='card-title center-text'>Settings</ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label floating>Select Playback Speed (0-2)</ion-label>
-            <ion-input type='number'[(ngModel)]='story.rate'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Select Story Length (Max 500 words)</ion-label>
-            <ion-input  [(ngModel)]='story.length'></ion-input>
-          </ion-item>
-          <ion-item>               
-            Current Language = {{ story.locale.title }}         
-          </ion-item>
-          <ion-item>
-            <button ion-button block>Select Language</button> 
-          </ion-item>
-        </ion-list> 
-      </ion-card-content>
-  </ion-card> -->
 
   <ion-card>
     <ion-card-header class='card-title center-text'>Text-to-Speech</ion-card-header>
@@ -89,4 +65,5 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
+
 </ion-content>

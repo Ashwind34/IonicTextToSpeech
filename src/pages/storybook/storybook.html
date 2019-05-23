@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content padding>
-
+  
   <ion-card *ngIf="story.gptResponse">
     <ion-card-header class='center-text'>
       Here is your story...
@@ -23,7 +23,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf='!story.gptResponse'>
+  <ion-card *ngIf='!story.gptResponse && !story.isLoading'>
     <ion-card-header class='center-text'>
       Click below for a new story!
     </ion-card-header>

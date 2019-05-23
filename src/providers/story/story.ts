@@ -28,9 +28,9 @@ export class StoryProvider {
 
   errorMessage: string;
 
-  constructor(public http: HttpClient, public tts: TextToSpeech, public loader: LoadingController) {
-    console.log('Story Provider Loaded')
-  }
+  isLoading: boolean = false
+
+  constructor(public http: HttpClient, public tts: TextToSpeech, public loader: LoadingController) {}
 
   cleanInputs() {
     if(this.length > 500) {
@@ -76,16 +76,19 @@ export class StoryProvider {
       content: 'Creating your story...'
     })
     loader.present()
+    this.isLoading = true;
     return this.http.get(this.getUrl + '&length=' + this.length)
     .subscribe(
       (response: any) => {
         this.gptResponse = response.text;
         this.speakText(this.gptResponse)
-        loader.dismiss()      
+        loader.dismiss()  
+        this.isLoading = false;    
       }, error => {
         this.errorMessage = 'Error Status Code: ' + error.status + ' (' + error.statusText + ')'
         console.log(this.errorMessage)
         loader.dismiss()
+        this.isLoading = false;
       }
     );
   }

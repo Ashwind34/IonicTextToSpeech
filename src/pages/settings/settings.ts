@@ -19,9 +19,7 @@ export class SettingsPage {
               public actShtCtrl: ActionSheetController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
-  }
+  ionViewDidLoad() {}
 
   goToHome() {
     this.navCtrl.setRoot(HomePage)

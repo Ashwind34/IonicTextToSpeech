@@ -1,6 +1,6 @@
 page-settings {
 
-    .item-label-floating {
+    .item-label-stacked {
         font-size: 90%;
         color: grey;
     }
@@ -9,4 +9,7 @@ page-settings {
         text-align: center;
     }
 
+    .smallfont {
+        font-size: 1.25rem;
+    }
 }

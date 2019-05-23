@@ -8,14 +8,14 @@
       <ion-card-content>
         <ion-list>
           <ion-item>
-            <ion-label floating>Select Playback Speed (0-2)</ion-label>
+            <ion-label stacked>Select Playback Speed (0-2)</ion-label>
             <ion-input type='number'[(ngModel)]='story.rate'></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>Select Story Length (Max 500 words)</ion-label>
+            <ion-label stacked>Select Story Length (Max 500)</ion-label>
             <ion-input  [(ngModel)]='story.length'></ion-input>
           </ion-item>
-          <ion-item>               
+          <ion-item class='center-text smallfont'>               
             Current Language = {{ story.locale.title }}         
           </ion-item>
           <ion-item>

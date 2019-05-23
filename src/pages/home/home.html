@@ -4,18 +4,18 @@
 
 <ion-content padding>
 
-  <ion-card>
-    <ion-card-header class='center-text'>Current Settings</ion-card-header>
+  <ion-card class='center-text'>
+    <ion-card-header >Current Settings</ion-card-header>
     <ion-card-content>
-      <ion-item  id='settings'>
-        Text Speed = {{ story.rate }} 
-      </ion-item>
-      <ion-item id='settings'>
-        Story Length = {{ story.length }}
-      </ion-item>  
-      <ion-item id='settings'>
+      <p>
+        Text Speed = {{ story.rate ? story.rate : 1.5 }} 
+      </p>
+      <p>
+        Story Length = {{ story.length ? story.length : 10 }}
+      </p>  
+      <p>
         Language = {{ story.locale.title }}
-      </ion-item>
+      </p>
       <ion-item class='center-text'>
         <button ion-button (click)='goToSettings()'>Change Settings</button>
       </ion-item> 

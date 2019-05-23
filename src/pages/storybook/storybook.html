@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content padding>
-  
+
   <ion-card *ngIf="story.gptResponse">
     <ion-card-header class='center-text'>
       Here is your story...
@@ -13,7 +13,7 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6>
-            <button ion-button block (click)='story.speakText(story.text)'>Replay Story</button>
+            <button ion-button block (click)='story.speakText(story.gptResponse)'>Replay Story</button>
           </ion-col>
           <ion-col col-6>
             <button ion-button block (click)='story.stopText()'>Stop Speaking</button>

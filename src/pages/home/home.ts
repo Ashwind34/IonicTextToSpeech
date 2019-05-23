@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { StoryProvider } from '../../providers/story/story';
 import { StorybookPage } from '../storybook/storybook';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -16,7 +17,11 @@ export class HomePage {
     public story: StoryProvider) {}
 
     goToStory() {
-      this.navCtrl.setRoot(StorybookPage)
+      this.navCtrl.setRoot(StorybookPage);
+    }
+
+    goToSettings() {
+      this.navCtrl.setRoot(SettingsPage);
     }
 
     newStory(){

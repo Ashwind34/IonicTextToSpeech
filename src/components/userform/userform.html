@@ -20,6 +20,7 @@
               </div>
               <div class='center'>
                 <a *ngIf="title === 'Login'" (click)='goToRegister()'>Click Here to Register</a>
+                <a *ngIf="title === 'Register'" (click)='goToLogin()'>Return to Login</a>
               </div>          
               <div class='center'>
                 <p *ngIf='errorMessage'>{{ errorMessage }}</p>

@@ -3,6 +3,7 @@ import { UserserviceProvider } from '../../providers/userservice/userservice';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 import { RegisterPage } from '../../pages/register/register';
+import { LoginPage } from '../../pages/login/login';
 
 @Component({
   selector: 'userform',
@@ -25,6 +26,10 @@ export class UserformComponent {
 
   goToRegister() {
     this.navCtrl.setRoot(RegisterPage)
+  }
+
+  goToLogin() {
+    this.navCtrl.setRoot(LoginPage)
   }
 
   // method to handle which http request url to use based on which page the form is rendered on

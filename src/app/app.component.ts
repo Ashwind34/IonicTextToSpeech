@@ -29,11 +29,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      // { title: 'Login', component: LoginPage },
-      { title: 'Register', component: RegisterPage },
-      { title: 'Settings', component: SettingsPage }
-    ];
+      { title: 'Settings', component: SettingsPage },
+      { title: 'Register', component: RegisterPage }
 
+    ];
   }
 
   initializeApp() {
@@ -54,8 +53,5 @@ export class MyApp {
   logout() {
     this.userServ.emptyLogin();
     this.nav.setRoot(LoginPage);
-    console.log(this.userServ.user);
-    console.log(this.userServ.isLoggedIn)
-    console.log(this.userServ.token)
   }
 }

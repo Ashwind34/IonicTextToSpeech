@@ -28,16 +28,6 @@ export class StoryProvider {
 
   errorMessage: string;
 
-  //USE THESE PROPERTIES AFTER RE-CONFIGURING API ENDPOINTS
-
-  // postUrl: string = 'https://gpt2-cors-cy5b7ah32q-uc.a.run.app';
-
-  // params: any = {
-  //   "length": this.length,
-  //   "temperature":  "0.8",
-  //   "top_k": "40"
-  // }
-
   constructor(public http: HttpClient, public tts: TextToSpeech, public loader: LoadingController) {
     console.log('Story Provider Loaded')
   }
@@ -82,7 +72,6 @@ export class StoryProvider {
 
   randomStory() {
     this.cleanInputs();    
-    console.log(this.fakeResponse);
     let loader = this.loader.create({
       content: 'Creating your story...'
     })
@@ -91,7 +80,6 @@ export class StoryProvider {
     .subscribe(
       (response: any) => {
         this.gptResponse = response.text;
-        console.log(this.gptResponse);
         this.speakText(this.gptResponse)
         loader.dismiss()      
       }, error => {
@@ -101,26 +89,4 @@ export class StoryProvider {
       }
     );
   }
-
-  check() {
-    console.log(this.length);
-    console.log(this.rate);
-    console.log(this.text);
-    console.log(this.locale);
-  }
-
-  //CURRENT API WILL ACCEPT TEXT TO FEED INTO MODEL
-  //WILL BE ABLE TO USE THIS AFTER RE-CONFIGURING API ENDPOINTS
-
-  // userStory(){
-  //   console.log(this.fakeResponse);
-  //   return this.http.post(this.postUrl, this.params)
-  //   .subscribe(
-  //     (response: any) => {
-  //       this.gptResponse = response;
-  //     }, error => {
-  //       console.log('Error Status Code: ' + error.status + ' (' + error.statusText + ')')
-  //     }
-  //   );
-  // }
 }

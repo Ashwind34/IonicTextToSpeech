@@ -1,13 +1,21 @@
-.item-label-floating {
-    font-size: 90%;
-    color: grey;
-}
+page-home {
 
-.center-text {
-    text-align: center;
-}
+    .item-label-floating {
+        font-size: 90%;
+        color: grey;
+    }
 
-p {
-    font-size: 1.5rem;
-    margin: 0.5rem !important;
+    .center-text {
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin: 0.5rem !important;
+    }
+
+    .button, .button-ios, .button-md {
+        font-size: 0.65em;
+    }
+
 }
